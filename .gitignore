@@ -1,2 +1,6 @@
 # log
 **/*.dSYM
+
+# except source file
+src/*
+src/*.dSYM
