@@ -16,5 +16,6 @@ int main(){
         scanf("%d");
     }
     
+    left.add(3);
     return 0;
 }
