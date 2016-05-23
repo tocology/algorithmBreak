@@ -20,12 +20,26 @@ int findPaper(int y, int x, int size){
   int bottomRight = findPaper(y+newSize, x+newSize, newSize);
   
   // pending check result
+<<<<<<< HEAD
   int sum = topLeft + topRight + bottomLeft + bottomRight;
   if(sum == 4 || sum == 0) // all of elements are 1 or 0
     return topLeft;
   
   paperCnt[topLeft]++; paperCnt[topRight]++;
   paperCnt[bottomLeft]++; paperCnt[bottomRight]++;
+=======
+  if(topLeft != -1 && topRight != -1
+     && bottomLeft != -1 && bottomRight != -1){
+    int res = topLeft + topRight + bottomLeft + bottomRight;
+    if(res == 4 || res == 0)
+      return topLeft;
+  }
+  
+  if(topLeft != -1) paperCnt[topLeft]++;
+  if(topRight != -1) paperCnt[topRight]++;
+  if(bottomLeft != -1) paperCnt[bottomLeft]++;
+  if(bottomRight != -1) paperCnt[bottomRight]++;
+>>>>>>> 47bd0fd3da9efd67c339c6367bed0ce58d4a1fb6
   
   return -1;
 }
