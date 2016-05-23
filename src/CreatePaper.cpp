@@ -20,7 +20,8 @@ int findPaper(int y, int x, int size){
   int bottomRight = findPaper(y+newSize, x+newSize, newSize);
   
   // pending check result
-  if(topLeft == topRight == bottomLeft == bottomRight)
+  int sum = topLeft + topRight + bottomLeft + bottomRight;
+  if(sum == 4 || sum == 0) // all of elements are 1 or 0
     return topLeft;
   
   paperCnt[topLeft]++; paperCnt[topRight]++;
@@ -30,7 +31,7 @@ int findPaper(int y, int x, int size){
 }
 
 int main(){
-  
+	
   scanf("%d", &N);
   
   map = vector<vector<int> >(N, vector<int>(N));
